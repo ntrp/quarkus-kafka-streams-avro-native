@@ -1,0 +1,17 @@
+{
+  "resources":[
+    {"pattern":"\\QMETA-INF/services/io.smallrye.config.SmallRyeConfigFactory\\E"}, 
+    {"pattern":"\\QMETA-INF/services/io.vertx.core.spi.FutureFactory\\E"}, 
+    {"pattern":"\\QMETA-INF/services/javax.ws.rs.ext.RuntimeDelegate\\E"}, 
+    {"pattern":"\\QMETA-INF/services/org.eclipse.microprofile.config.spi.ConfigSourceProvider\\E"}, 
+    {"pattern":"\\QMETA-INF/services/org.eclipse.microprofile.config.spi.ConfigSource\\E"}, 
+    {"pattern":"\\QMETA-INF/services/org.eclipse.microprofile.config.spi.Converter\\E"}, 
+    {"pattern":"\\Qapplication.yml\\E"}, 
+    {"pattern":"\\Qkafka/kafka-streams-version.properties\\E"}, 
+    {"pattern":"\\Qkafka/kafka-version.properties\\E"}, 
+    {"pattern":"\\Qlibrocksdbjni-linux64.so\\E"}, 
+    {"pattern":"\\Qorg/jboss/threads/Version.properties\\E"}, 
+    {"pattern":"\\Qorg/slf4j/impl/StaticLoggerBinder.class\\E"}
+  ],
+  "bundles":[]
+}

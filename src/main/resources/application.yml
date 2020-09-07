@@ -1,0 +1,46 @@
+quarkus:
+  ssl:
+    native: true
+  native:
+    additional-build-args: >-
+      --initialize-at-build-time=de.porsche.mymessaging.custcomm.kafka.dto,
+      -H:+TraceClassInitialization,
+      -J-Davro.disable.unsafe,
+      -H:+AllowIncompleteClasspath,
+      -H:ConfigurationFileDirectories=native-image
+    report-errors-at-runtime: true
+  application:
+    name: enricher
+
+  kafka-streams:
+    application-server: localhost:8088
+    topics: ${custcomm.topic.accepted},${custcomm.topic.enrichment}
+    bootstrap-servers: kafka1:19092,kafka2:29092
+    security:
+      protocol: SSL
+    ssl:
+      key:
+        password: confluent
+      keystore:
+        location: /home/ntrp/_ws/porsche/repos/messaging-kafka-acl/test-utils/security/kafka.client.keystore.jks
+        password: confluent
+      truststore:
+        location: /home/ntrp/_ws/porsche/repos/messaging-kafka-acl/test-utils/security/truststore.jks
+        password: confluent
+schema:
+  registry:
+    url: https://schemaregistry:8081
+    ssl:
+      key:
+        password: confluent
+      keystore:
+        location: /home/ntrp/_ws/porsche/repos/messaging-kafka-acl/test-utils/security/kafka.client.keystore.jks
+        password: confluent
+      truststore:
+        location: /home/ntrp/_ws/porsche/repos/messaging-kafka-acl/test-utils/security/truststore.jks
+        password: confluent
+
+custcomm:
+  topic:
+    enrichment: LOCAL_CustComm_Enrichment_Queue
+    accepted: LOCAL_CustComm_Accepted
